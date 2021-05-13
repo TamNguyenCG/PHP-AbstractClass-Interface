@@ -1,24 +1,53 @@
 <?php
-include "vendor/autoload.php";
 
-use Geometry\Circles;
-use Geometry\Rectangle;
-use Geometry\Square;
+include_once 'vendor/autoload.php';
+use Resize\Circle;
 
-$circle = new Circles("Circle",20);
-echo "This is a Circle with name is: $circle->name <br> Radius is:  $circle->radius<br>";
-$circle->setPercent(20);
-echo "Circle Radius resize by {$circle->getPercent()} % = {$circle->resize()} radius <hr>";
+$arr = [];
+array_push($arr,$circle = new Circle("Circle",5));
+array_push($arr,$rectangle = new \Resize\Rectangle("Rectangle",10,15));
+array_push($arr,$square = new \Resize\Square("Square",8));
+$percentage = rand(1,100);
 
-$rectangle = new Rectangle("Rectangle",15,20);
-echo "This is a Rectangle with name is: $rectangle->name <br> 
-                                Width: $rectangle->width cm <br> 
-                                Height: $rectangle->height cm <br>";
-$rectangle->setPercent(30);
-echo "Rectangle Width and Height resize by {$rectangle->getPercent()} % : Width = {$rectangle->resize()} cm
-                                                                        - Height = {$rectangle->resizeHeight()} cm <hr>";
+?>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Resizeable Geometry</title>
+    <style>
+        h1{
+            color: red;
+        }
+        table{
+            border-collapse: collapse;
+            text-align: center;
+            padding: 5px;
+            width: 500px
+        }
+    </style>
+</head>
+<body>
+    <h1>Resizeable Geometry with Area</h1>
+    <table border="1">
+        <tr>
+            <th>No.</th>
+            <th>Name</th>
+            <th>Before</th>
+            <th>After</th>
+        </tr>
+        <?php foreach ($arr as $index => $item): ?>
+        <tr>
+            <td><?php echo $index + 1 ?></td>
+            <td><?php echo $item->getName() ?></td>
+            <td><?php echo $item->calculateArea() ?></td>
+            <td><?php echo $item->resize($percentage)?></td>
+        </tr>
+        <?php endforeach;?>
+    </table>
+</body>
+</html>
 
-$square = new Square("Square",25);
-echo "This is Square with name is:  $square->name <br> Side: $square->width cm <br>";
-$square->setPercent(20);
-echo "Square Side resize by {$square->getSquarePercent()}% : Side = {$square->resize()} cm";

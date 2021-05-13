@@ -6,7 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Shape\\' => array($baseDir . '/Shape'),
-    'Resizeable\\' => array($baseDir . '/Resizeable'),
-    'Geometry\\' => array($baseDir . '/Geometry'),
+    'Resize\\' => array($baseDir . '/Geometry', $baseDir . '/Shape', $baseDir . '/'),
 );

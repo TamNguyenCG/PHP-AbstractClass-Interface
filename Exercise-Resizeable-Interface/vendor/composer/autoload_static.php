@@ -4,43 +4,29 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInite121cb8707409e0c62fd5495569fc7cf
+class ComposerStaticInit232b8eb0c2b4e2108c4bed227ffa1ba0
 {
     public static $prefixLengthsPsr4 = array (
-        'S' => 
-        array (
-            'Shape\\' => 6,
-        ),
         'R' => 
         array (
-            'Resizeable\\' => 11,
-        ),
-        'G' => 
-        array (
-            'Geometry\\' => 9,
+            'Resize\\' => 7,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Shape\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/Shape',
-        ),
-        'Resizeable\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/Resizeable',
-        ),
-        'Geometry\\' => 
+        'Resize\\' => 
         array (
             0 => __DIR__ . '/../..' . '/Geometry',
+            1 => __DIR__ . '/../..' . '/Shape',
+            2 => __DIR__ . '/../..' . '/',
         ),
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInite121cb8707409e0c62fd5495569fc7cf::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInite121cb8707409e0c62fd5495569fc7cf::$prefixDirsPsr4;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit232b8eb0c2b4e2108c4bed227ffa1ba0::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit232b8eb0c2b4e2108c4bed227ffa1ba0::$prefixDirsPsr4;
 
         }, null, ClassLoader::class);
     }

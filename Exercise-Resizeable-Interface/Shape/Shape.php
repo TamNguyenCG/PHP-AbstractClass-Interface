@@ -1,5 +1,6 @@
 <?php
-namespace Shape;
+
+namespace Resize;
 
 class Shape
 {
@@ -10,4 +11,11 @@ class Shape
         $this->name = $name;
     }
 
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
 }

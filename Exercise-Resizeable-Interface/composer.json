@@ -1,5 +1,5 @@
 {
-  "name": "vendor_name/exercise-resizeable",
+  "name": "vendor_name/exercise-resizeable-interface",
   "description": "description",
   "minimum-stability": "stable",
   "license": "proprietary",
@@ -11,9 +11,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "Geometry\\": "Geometry",
-      "Shape\\": "Shape",
-      "Resizeable\\": "Resizeable"
+      "Resize\\": ["Geometry","Shape",""]
     }
   },
   "require": {

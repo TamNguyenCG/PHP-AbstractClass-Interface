@@ -1,48 +1,41 @@
 <?php
-namespace Geometry;
-use JetBrains\PhpStorm\Pure;
-use Resizeable\Resizeable;
-use Shape\Shape;
+
+namespace Resize;
+
 
 class Rectangle extends Shape implements Resizeable
 {
-    public int|float $width;
-    public int|float $height;
-    public int|float $percent;
-    const PERCENTAGE = 100;
+    public int $width;
+    public int $height;
 
- #[Pure] public function __construct(string $name, $width, $height)
+    #[Pure] public function __construct(string $name,
+                                        int $width,
+                                        int $height)
     {
         parent::__construct($name);
         $this->width = $width;
         $this->height = $height;
-        $this->percent = 100;
     }
 
     /**
-     * @param float|int $percent
+     * @return string
      */
-    public function setPercent(float|int $percent): void
+    public function getName(): string
     {
-        $this->percent = $percent;
+        return $this->name;
+    }
+    public function calculateArea(): float|int
+    {
+        return $this->height * $this->width;
     }
 
-    /**
-     * @return float|int
-     */
-    public function getPercent(): float|int
+    public function calculatePerimeter(): float|int
     {
-        return $this->percent;
+        return ($this->height + $this->width) * 2;
     }
 
-    public function resize(): float|int
+    #[Pure] public function resize($percentage): float|int
     {
-        return $this->width += $this->width * $this->percent/self::PERCENTAGE;
+        return $this->calculateArea() * $percentage;
     }
-
-    public function resizeHeight(): float|int
-    {
-       return $this->height += $this->height * $this->percent/self::PERCENTAGE;
-    }
-
 }
