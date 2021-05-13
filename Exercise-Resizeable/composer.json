@@ -1,0 +1,21 @@
+{
+  "name": "vendor_name/exercise-resizeable",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "tamnguyen",
+      "email": "email@example.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Geometry\\": "Geometry",
+      "Shape\\": "Shape",
+      "Resizeable\\": "Resizeable"
+    }
+  },
+  "require": {
+  }
+}
