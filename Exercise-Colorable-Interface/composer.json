@@ -1,0 +1,19 @@
+{
+  "name": "vendor_name/Exercise-Colorable-Interface",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "tamnguyen",
+      "email": "email@example.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Colorable\\": ["Geometry","Shape",""]
+    }
+  },
+  "require": {
+  }
+}
